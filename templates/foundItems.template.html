@@ -1,0 +1,23 @@
+<div class="loader" ng-if="$ctrl.loading"></div>
+<div ng-if="$ctrl.noresults">
+  <h3>Nothing found</h3>
+</div>
+<div class="col-md-12 found-items" ng-repeat="item in $ctrl.foundItems">
+  <div class="row">
+    <div class="col-md-1">
+      <span class="item_short">{{item.short_name}}</span>
+    </div>
+    <div class="col-md-7">
+      {{item.name}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-9">
+      <span class="item_desc">{{item.description}}</span>
+    </div>
+    <div class="col-md-2">
+      <button class="btn btn-danger btn-xs rmv-btn" ng-click="$ctrl.onRemove({index: $index})">Don't want this one!</button>
+    </div>
+  </div>
+</div>
